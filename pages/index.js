@@ -5,6 +5,21 @@ import React, { useState, useEffect } from 'react';
 function DaysUntil24th() {
   const [daysUntil, setDaysUntil] = useState(0);
 
+  const [number, setNumber] = useState('');
+
+  const handleChange = (event) => {
+    setNumber(event.target.value); // Update the number state with the input value
+    localStorage.setItem('number', JSON.stringify(event.target.value));
+  };
+
+  useEffect(() => {
+    const storedNumber = localStorage.getItem('number');
+
+    if (storedNumber) {
+      setNumber(JSON.parse(storedNumber));
+    }
+  }, []);
+
   useEffect(() => {
     const calculateDaysUntil = () => {
       const today = new Date();
@@ -44,9 +59,20 @@ function DaysUntil24th() {
     calculateDaysUntil();
   }, []);
 
+
   return (
     <div>
       <h1>Days Until Target Date: {daysUntil}</h1>
+      <div>
+      <label htmlFor="numberInput">Enter a number: </label>
+      <input
+        type="number"
+        id="numberInput"
+        value={number}
+        onChange={handleChange} // Set the handleChange function to run when the input value changes
+      />
+      <p>Your daily budget is: {number / daysUntil}</p>
+    </div>
     </div>
   );
 }

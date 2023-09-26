@@ -66,7 +66,7 @@ function DaysUntil24th() {
       <div>
       <label htmlFor="numberInput">Enter a number: </label>
       <input
-        type="number"
+        type="tel"
         id="numberInput"
         value={number}
         onChange={handleChange} // Set the handleChange function to run when the input value changes

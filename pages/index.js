@@ -71,8 +71,7 @@ function DaysUntil24th() {
         value={number}
         onChange={handleChange} // Set the handleChange function to run when the input value changes
       />
-      <p>Your daily budget is:</p>
-      <h1> {number / daysUntil}</h1>
+      <p>Your daily budget is: {number / daysUntil}</p>
     </div>
     </div>
   );

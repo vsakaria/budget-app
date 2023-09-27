@@ -62,18 +62,21 @@ function DaysUntil24th() {
 
   return (
     <div>
-      <h1>Days Until Target Date: {daysUntil}</h1>
-      <div>
-      <label htmlFor="numberInput">Enter a number: </label>
-      <input
-        type="tel"
-        id="numberInput"
-        value={number}
-        onChange={handleChange} // Set the handleChange function to run when the input value changes
-      />
-      <p>Your daily budget is:</p>
-      <h1>{number / daysUntil}</h1>
-    </div>
+       <h1> {daysUntil}</h1> <h1>{number / daysUntil}</h1>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <div>
+          <input
+            type="tel"
+            id="numberInput"
+            value={number}
+            onChange={handleChange} // Set the handleChange function to run when the input value changes
+          />
+          <p>Your daily budget is:</p>
+        </div>
     </div>
   );
 }

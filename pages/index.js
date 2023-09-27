@@ -62,7 +62,7 @@ function DaysUntil24th() {
 
   return (
     <div>
-       <h1> {daysUntil}</h1> <h1>{number / daysUntil}</h1>
+       <h1> {daysUntil}</h1> <h1>{Math.trunc(number / daysUntil)}</h1>
         <br/>
         <br/>
         <br/>
